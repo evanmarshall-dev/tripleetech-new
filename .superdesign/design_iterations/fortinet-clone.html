@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Triple E Technology Solutions | Cybersecurity Solutions | Remote
+      Monitoring | IT Services
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      :root {
+        --fortinet-red: #d8291c;
+        --fortinet-blue: #1d4c88;
+        --fortinet-green: #3cb17e;
+        --fortinet-teal: #2cccd3;
+        --fortinet-dark: #1a1a1a;
+        --fortinet-gray: #58595b;
+        --fortinet-light-gray: #f5f5f5;
+        --fortinet-white: #ffffff;
+        --fortinet-black: #000000;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: var(--fortinet-dark);
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--fortinet-white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 15px 0;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        height: 40px;
+        width: auto;
+      }
+
+      .nav-menu {
+        display: none;
+        gap: 30px;
+        list-style: none;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--fortinet-dark);
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-menu a:hover {
+        color: var(--fortinet-red);
+      }
+
+      .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      /* Hero Banner */
+      .hero-banner {
+        position: relative;
+        height: 100vh;
+        min-height: 600px;
+        background: linear-gradient(
+          135deg,
+          var(--fortinet-red) 0%,
+          var(--fortinet-blue) 100%
+        );
+        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url("../../public/images/pexels-mahdibafande-14990059.jpg") no-repeat
+            center center/cover;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        color: var(--fortinet-white);
+        max-width: 600px;
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .hero-cta {
+        display: inline-block;
+        background: var(--fortinet-white);
+        color: var(--fortinet-blue);
+        padding: 15px 30px;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .hero-cta:hover {
+        background: var(--fortinet-light-gray);
+        transform: translateY(-2px);
+      }
+
+      .hero-slider {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+      }
+
+      .slider-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .slider-dot.active {
+        background: var(--fortinet-white);
+      }
+
+      /* Section Styling */
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-label {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--fortinet-blue);
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        margin-bottom: 50px;
+        text-align: center;
+        line-height: 1.3;
+        color: var(--fortinet-dark);
+      }
+
+      /* Integration Section */
+      .integration-section {
+        background: var(--fortinet-white);
+        color: var(--fortinet-red);
+        position: relative;
+      }
+
+      .integration-section::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 65%;
+        height: 45%;
+        background: var(--fortinet-light-gray);
+        transform: translateY(-50%);
+        z-index: 1;
+      }
+
+      .fabric-grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .fabric-card {
+        background: var(--fortinet-blue);
+        color: var(--fortinet-white);
+        padding: 40px 30px;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .fabric-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .fabric-card h3 {
+        color: var(--fortinet-white);
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      .fabric-card p {
+        margin-bottom: 20px;
+        color: var(--fortinet-light-gray);
+      }
+
+      .fabric-list {
+        list-style: none;
+      }
+
+      .fabric-list li {
+        margin-bottom: 8px;
+      }
+
+      .fabric-list a {
+        color: var(--fortinet-white);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .fabric-list a:hover {
+        color: var(--fortinet-teal);
+      }
+
+      /* AI Section */
+      .ai-section {
+        background: var(--fortinet-white);
+      }
+
+      .ai-diagram {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 60px 0;
+        position: relative;
+      }
+
+      .ai-circle {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--fortinet-green) 0%,
+          var(--fortinet-teal) 50%,
+          var(--fortinet-blue) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--fortinet-white);
+        font-size: 2rem;
+        font-weight: 700;
+        position: relative;
+      }
+
+      .ai-features {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .ai-feature {
+        position: absolute;
+        background: var(--fortinet-white);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        max-width: 200px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      .ai-feature:nth-child(1) {
+        top: -50px;
+        left: -100px;
+      }
+
+      .ai-feature:nth-child(2) {
+        top: -50px;
+        right: -100px;
+      }
+
+      .ai-feature:nth-child(3) {
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* Platform Section */
+      .platform-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .platform-card {
+        background: var(--fortinet-white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .platform-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .platform-header {
+        padding: 15px 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .platform-header.red {
+        background: var(--fortinet-red);
+        color: var(--fortinet-white);
+      }
+
+      .platform-header.black {
+        background: var(--fortinet-black);
+        color: var(--fortinet-white);
+      }
+
+      .platform-header.blue {
+        background: var(--fortinet-blue);
+        color: var(--fortinet-white);
+      }
+
+      .platform-body {
+        padding: 30px 20px;
+        text-align: center;
+      }
+
+      .platform-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 20px;
+        background: var(--fortinet-light-gray);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+      }
+
+      .platform-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--fortinet-dark);
+      }
+
+      .platform-desc {
+        color: var(--fortinet-gray);
+        font-size: 0.95rem;
+      }
+
+      /* News Section */
+      .news-slider {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+        padding: 20px 0;
+        scroll-behavior: smooth;
+      }
+
+      .news-card {
+        min-width: 350px;
+        background: var(--fortinet-white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .news-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .news-content {
+        padding: 25px;
+      }
+
+      .news-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: var(--fortinet-dark);
+      }
+
+      .news-desc {
+        color: var(--fortinet-gray);
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+      }
+
+      .news-link {
+        color: var(--fortinet-white);
+        text-decoration: none;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+      }
+
+      /* Stats Section */
+      /* .stats-section {
+        background: var(--fortinet-green);
+        color: var(--fortinet-white);
+        position: relative;
+      } */
+
+      .stats-section {
+        position: relative;
+        height: 100vh;
+        min-height: 600px;
+        color: var(--fortinet-white);
+        background: linear-gradient(
+          135deg,
+          var(--fortinet-red) 0%,
+          var(--fortinet-blue) 100%
+        );
+        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url("../../public/images/pexels-uniqueton-4021262.jpg") no-repeat
+            center center/cover;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        margin-top: 50px;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+
+      /* Customer Stories */
+      .customer-section {
+        background: darkslategray;
+        color: var(--fortinet-white);
+      }
+
+      .customer-story {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      .customer-content h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .customer-quote {
+        font-size: 1.1rem;
+        font-style: italic;
+        margin-bottom: 20px;
+        opacity: 0.9;
+      }
+
+      .customer-author {
+        font-weight: 600;
+      }
+
+      .customer-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      /* Trust Section */
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .trust-card {
+        background: var(--fortinet-gray);
+        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+          url("../../public/images/pexels-steve-28574352.jpg") no-repeat center
+            center/cover;
+        padding: 30px;
+        border-radius: 10px;
+        border-bottom: 5px solid var(--fortinet-green);
+        transition: transform 0.3s ease, background 1s ease;
+      }
+
+      .trust-card:hover {
+        transform: translateY(-5px);
+        background: var(--fortinet-green);
+      }
+
+      .trust-card h4 {
+        color: var(--fortinet-white);
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+      }
+
+      .trust-card p {
+        color: var(--fortinet-light-gray);
+      }
+
+      /* Events Section */
+      .events-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .event-card {
+        background: var(--fortinet-white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .event-image {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .event-content {
+        padding: 25px;
+      }
+
+      .event-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .event-date {
+        color: var(--fortinet-red);
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .event-desc {
+        color: var(--fortinet-gray);
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      .event-btn {
+        background: var(--fortinet-red);
+        color: var(--fortinet-white);
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: background 0.3s ease;
+      }
+
+      .event-btn:hover {
+        background: #b82219;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--fortinet-dark);
+        color: var(--fortinet-white);
+        padding: 60px 0 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-section h4 {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--fortinet-white);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 20px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .footer-legal {
+        padding-top: 20px;
+        text-align: center;
+        color: var(--fortinet-dark);
+        background: var(--fortinet-white);
+
+        ul {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          font-size: 0.9rem;
+        }
+      }
+
+      .legal-links a {
+        color: var(--fortinet-dark);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .legal-links a:hover {
+        color: var(--fortinet-gray);
+      }
+
+      /* Responsive Design */
+      @media (min-width: 768px) {
+        .nav-menu {
+          display: flex;
+        }
+
+        .nav-toggle {
+          display: none;
+        }
+
+        .customer-story {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .fabric-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .customer-story {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .ai-features {
+          display: none;
+        }
+
+        .news-slider {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .news-card {
+          min-width: 100%;
+          max-width: 400px;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      /* Utility Classes */
+      .text-center {
+        text-align: center;
+      }
+
+      .mb-4 {
+        margin-bottom: 2rem;
+      }
+
+      .mt-4 {
+        margin-top: 2rem;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--fortinet-green);
+        color: var(--fortinet-white);
+        padding: 12px 24px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 1px solid var(--fortinet-light-gray);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn:hover {
+        background: var(--fortinet-gray);
+        color: var(--fortinet-white);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--fortinet-white);
+        color: var(--fortinet-white);
+      }
+
+      .btn-outline:hover {
+        background: var(--fortinet-blue);
+        color: var(--fortinet-white);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <nav class="nav-container">
+          <a href="/"
+            ><img
+              src="../../public/icons/logo-small.svg"
+              alt="Triple E Technology Solutions Logo"
+              class="logo"
+          /></a>
+          <ul class="nav-menu">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#partners">Partners</a></li>
+            <li><a href="#company">Company</a></li>
+          </ul>
+          <button class="nav-toggle">☰</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="container">
+        <div class="hero-content fade-in">
+          <h1 class="hero-title">Emphasis Item 1 Title</h1>
+          <p class="hero-subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ad
+            maxime dolore harum laborum suscipit, labore vero eligendi?
+            Molestias magnam eos, nostrum quam ducimus repellat amet adipisci
+            nobis accusamus sit.
+          </p>
+          <a href="#" class="hero-cta">CTA</a>
+        </div>
+      </div>
+      <div class="hero-slider">
+        <span class="slider-dot active"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="section integration-section">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-label">KEY SERVICES</div>
+          <h2 class="section-title">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit Tenetur
+            dolorum.
+          </h2>
+        </div>
+
+        <div class="fabric-grid">
+          <div class="fabric-card fade-in">
+            <h3>Service 1 Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit Obcaecati
+              facere.
+            </p>
+            <ul class="fabric-list">
+              <li><a href="#">Feature 1</a></li>
+              <li><a href="#">Feature 2</a></li>
+              <li><a href="#">Feature 3</a></li>
+              <li><a href="#">Feature 4</a></li>
+              <li><a href="#">Feature 5</a></li>
+              <li><a href="#">Feature 6</a></li>
+              <li><a href="#">Feature 7</a></li>
+            </ul>
+          </div>
+
+          <div class="fabric-card fade-in">
+            <h3>Service 2 Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit Obcaecati
+              facere.
+            </p>
+            <ul class="fabric-list">
+              <li><a href="#">Feature 1</a></li>
+              <li><a href="#">Feature 2</a></li>
+              <li><a href="#">Feature 3</a></li>
+              <li><a href="#">Feature 4</a></li>
+              <li><a href="#">Feature 5</a></li>
+              <li><a href="#">Feature 6</a></li>
+              <li><a href="#">Feature 7</a></li>
+            </ul>
+          </div>
+
+          <div class="fabric-card fade-in">
+            <h3>Service 3 Title</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit Obcaecati
+              facere.
+            </p>
+            <ul class="fabric-list">
+              <li><a href="#">Feature 1</a></li>
+              <li><a href="#">Feature 2</a></li>
+              <li><a href="#">Feature 3</a></li>
+              <li><a href="#">Feature 4</a></li>
+              <li><a href="#">Feature 5</a></li>
+              <li><a href="#">Feature 6</a></li>
+              <li><a href="#">Feature 7</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Section -->
+    <section class="section ai-section">
+      <div class="container">
+        <div class="text-center">
+          <!-- <div class="section-label">AI-DRIVEN SECURITY</div> -->
+          <!-- <h2 class="section-title">
+            Secure and Transform Your Business with AI
+          </h2> -->
+          <div class="section-label">TITLE FOR DIAGRAM</div>
+          <h2 class="section-title">Here we will have some sort of diagram</h2>
+        </div>
+
+        <!-- <div class="ai-diagram">
+          <div class="ai-circle">
+            <span>FortiAI</span>
+            <div class="ai-features">
+              <div class="ai-feature">
+                <strong>FortiAI–Protect</strong><br />
+                Defends against emerging threats and AI applications in real
+                time
+              </div>
+              <div class="ai-feature">
+                <strong>FortiAI–Assist</strong><br />
+                Transform security and network operations with intelligent
+                automation and analytics
+              </div>
+              <div class="ai-feature">
+                <strong>FortiAI–Secure</strong><br />
+                Secures AI models and systems, prevents LLM data leakage, and
+                secures AI workloads
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="text-center mt-4">
+          <a href="#" class="btn">Learn about diagram</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Section -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-label">Highlighted Platform or Solution</div>
+          <h2 class="section-title">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </h2>
+        </div>
+
+        <div class="platform-grid">
+          <div class="platform-card fade-in">
+            <div class="platform-header red">
+              HIGHLIGHTED PLATFORM FEATURE 1
+            </div>
+            <div class="platform-body">
+              <div class="platform-icon">🛡️</div>
+              <h4 class="platform-title">Feature Title</h4>
+              <p class="platform-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis, commodi.
+              </p>
+            </div>
+          </div>
+
+          <div class="platform-card fade-in">
+            <div class="platform-header black">
+              HIGHLIGHTED PLATFORM FEATURE 2
+            </div>
+            <div class="platform-body">
+              <div class="platform-icon">🤖</div>
+              <h4 class="platform-title">Feature Title</h4>
+              <p class="platform-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis, commodi.
+              </p>
+            </div>
+          </div>
+
+          <div class="platform-card fade-in">
+            <div class="platform-header blue">
+              HIGHLIGHTED PLATFORM FEATURE 3
+            </div>
+            <div class="platform-body">
+              <div class="platform-icon">💻</div>
+              <h4 class="platform-title">Feature Title</h4>
+              <p class="platform-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis, commodi.
+              </p>
+            </div>
+          </div>
+
+          <div class="platform-card fade-in">
+            <div class="platform-header blue">
+              HIGHLIGHTED PLATFORM FEATURE 4
+            </div>
+            <div class="platform-body">
+              <div class="platform-icon">🔐</div>
+              <h4 class="platform-title">Feature Title</h4>
+              <p class="platform-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis, commodi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <!-- <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-label">News</div>
+          <h2 class="section-title">Latest from Fortinet</h2>
+        </div>
+
+        <div class="news-slider">
+          <article class="news-card">
+            <img
+              src="https://www.fortinet.com/content/dam/fortinet/images/news/featured-news/featured-news-157.jpg"
+              alt="Advanced Security for Apps & APIs"
+              class="news-image" />
+            <div class="news-content">
+              <h3 class="news-title">Advanced Security for Apps & APIs</h3>
+              <p class="news-desc">
+                Introducing AI Assist with FortiAppSec Cloud to automate threat
+                defense, speed response, cut risk, and bridge skills gaps.
+              </p>
+              <a href="#" class="news-link">Read the Blog</a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <img
+              src="https://www.fortinet.com/content/dam/fortinet/images/news/featured-news/featured-news-154.jpg"
+              alt="Newsweek America's Greatest Companies"
+              class="news-image" />
+            <div class="news-content">
+              <h3 class="news-title">
+                Fortinet Named to Newsweek's America's Greatest Companies 2025
+              </h3>
+              <p class="news-desc">
+                Our portfolio of over 50 enterprise-grade products are among the
+                most deployed, most patented, and most validated in the
+                industry.
+              </p>
+              <a href="#" class="news-link">Learn More</a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <img
+              src="https://www.fortinet.com/content/dam/fortinet/images/news/featured-news/featured-news-153.jpg"
+              alt="KuppingerCole Report"
+              class="news-image" />
+            <div class="news-content">
+              <h3 class="news-title">
+                Top Attack Surface Management Insights from the 2025
+                KuppingerCole Report
+              </h3>
+              <p class="news-desc">
+                FortiRecon named a leader in Overall, Market, and Innovation
+                Presence.
+              </p>
+              <a href="#" class="news-link">Download the Report</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Stats Section -->
+    <section class="section stats-section">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-label" style="color: var(--fortinet-white)">
+            Solution or Platform Stats
+          </div>
+          <h2 class="section-title" style="color: var(--fortinet-white)">
+            Global Threat Protection Delivered Daily
+          </h2>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">1T</div>
+            <div class="stat-label">Cloud events processed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">500K</div>
+            <div class="stat-label">Exploit attempts detected</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">300K</div>
+            <div class="stat-label">Malware executions blocked</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2B</div>
+            <div class="stat-label">New unique objects analyzed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15M</div>
+            <div class="stat-label">New unique attack objects identified</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5B</div>
+            <div class="stat-label">Attacks prevented inline</div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="#" class="btn">Explore Threat Research</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Stories -->
+    <section class="section customer-section">
+      <div class="container">
+        <div class="customer-story">
+          <div class="customer-content">
+            <h3>Case Study or Customer Story Title Here</h3>
+            <p class="customer-quote">
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+              itaque doloremque odit minus nesciunt laudantium dolor
+              consectetur, perspiciatis architecto quis mollitia eaque velit
+              culpa voluptatum, et fugit cum sed quibusdam. Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Quo at, quibusdam eligendi
+              quia quidem porro, quod numquam consequuntur minus similique
+              possimus facilis ipsam exercitationem consequatur reiciendis
+              itaque obcaecati corrupti necessitatibus.""
+            </p>
+            <p class="customer-author">
+              <strong>Jane Doe</strong>, Business Security Compliance Director,
+              Company Name
+            </p>
+            <div class="mt-4">
+              <a href="#" class="btn btn-outline">Read the Case Study</a>
+            </div>
+          </div>
+          <div>
+            <img
+              src="../../public/images/pexels-pixabay-159304.jpg"
+              alt="IHG Hotel"
+              class="customer-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Title for why customers trust us</h2>
+          <p class="mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+            laboriosam aut corrupti nihil odit? Incidunt eum minima ut? Atque
+            eum totam qui aut dolorem voluptas minima velit excepturi quaerat
+            obcaecati.
+          </p>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-card">
+            <h4>Trusted Company</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
+              doloremque voluptate! Blanditiis fugiat eum consequuntur in ab a
+              voluptatem suscipit placeat exercitationem cum rerum libero
+              aliquam, odit, veniam repudiandae soluta.
+            </p>
+            <a href="#" class="news-link">Learn More »</a>
+          </div>
+
+          <div class="trust-card">
+            <h4>Trusted Products</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
+              doloremque voluptate! Blanditiis fugiat eum consequuntur in ab a
+              voluptatem suscipit placeat exercitationem cum rerum libero
+              aliquam, odit, veniam repudiandae soluta.
+            </p>
+            <a href="#" class="news-link">Learn More »</a>
+          </div>
+
+          <div class="trust-card">
+            <h4>Trusted Processes</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
+              doloremque voluptate! Blanditiis fugiat eum consequuntur in ab a
+              voluptatem suscipit placeat exercitationem cum rerum libero
+              aliquam, odit, veniam repudiandae soluta.
+            </p>
+            <a href="#" class="news-link">Learn More »</a>
+          </div>
+
+          <div class="trust-card">
+            <h4>Trusted Partners</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
+              doloremque voluptate! Blanditiis fugiat eum consequuntur in ab a
+              voluptatem suscipit placeat exercitationem cum rerum libero
+              aliquam, odit, veniam repudiandae soluta.
+            </p>
+            <a href="#" class="news-link">Learn More »</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <!-- <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Upcoming Events</h2>
+        </div>
+
+        <div class="events-grid">
+          <div class="event-card">
+            <img
+              src="https://www.fortinet.com/content/dam/fortinet/images/events/logos/event-2025/fal-con-gov-2025.jpg"
+              alt="Fal.Con 2025"
+              class="event-image" />
+            <div class="event-content">
+              <h3 class="event-title">Fal.Con 2025</h3>
+              <p class="event-date">
+                Mon, September 15, 2025 - Thu, September 18, 2025
+              </p>
+              <p class="event-desc">
+                Gain insights from top cybersecurity experts, get hands-on
+                training, and forge new partnerships.
+              </p>
+              <a href="#" class="event-btn">Register Now</a>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <img
+              src="https://www.fortinet.com/content/dam/fortinet/images/events/logos/event-2025/sase-summit-2025.jpg"
+              alt="SASE Summit 2025"
+              class="event-image" />
+            <div class="event-content">
+              <h3 class="event-title">The 4th Annual SASE Summit</h3>
+              <p class="event-date">
+                Tue, September 16, 2025 - Thu, September 18, 2025
+              </p>
+              <p class="event-desc">
+                Convergence without Compromise: Unified Platform. AI at the
+                Core.
+              </p>
+              <a href="#" class="event-btn">Register Now</a>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <img
+              src="https://www.fortinet.com/content/dam/fortinet/images/events/event-thumb.jpg"
+              alt="MISA Atlantic"
+              class="event-image" />
+            <div class="event-content">
+              <h3 class="event-title">MISA Atlantic</h3>
+              <p class="event-date">
+                Tue, September 16, 2025 - Thu, September 18, 2025
+              </p>
+              <p class="event-desc">
+                Fortinet is proud to join MISA Atlantic as a national sponsor,
+                featuring a keynote session.
+              </p>
+              <a href="#" class="event-btn">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Products</h4>
+            <ul class="footer-links">
+              <li><a href="#">Product 1</a></li>
+              <li><a href="#">Product 2</a></li>
+              <li><a href="#">Product 3</a></li>
+              <li><a href="#">Product 4</a></li>
+              <li><a href="#">Product 5</a></li>
+              <li><a href="#">Product 6</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Solutions</h4>
+            <ul class="footer-links">
+              <li><a href="#">Solution 1</a></li>
+              <li><a href="#">Solution 2</a></li>
+              <li><a href="#">Solution 3</a></li>
+              <li><a href="#">Solution 4</a></li>
+              <li><a href="#">Solution 5</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="#">Resource 1</a></li>
+              <li><a href="#">Resource 2</a></li>
+              <li><a href="#">Resource 3</a></li>
+              <li><a href="#">Resource 4</a></li>
+              <li><a href="#">Resource 5</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul class="footer-links">
+              <li><a href="#">About Triple E</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Solutions</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Triple E Technology, Inc. All rights reserved. This is a
+            demo site for client purposes.
+          </p>
+          <p>
+            Carefully crafted by
+            <a target="_blank" href="https://www.evanmarshall.dev"
+              >evanmarshall.dev</a
+            >.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <section class="footer footer-legal">
+      <ul class="footer-links legal-links">
+        <li><a href="#">Terms of Service</a></li>
+        <li>|</li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li>|</li>
+        <li><a href="#">Cookie Settings</a></li>
+      </ul>
+    </section>
+
+    <script>
+      // Simple intersection observer for fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements that should fade in
+      document
+        .querySelectorAll(".fabric-card, .platform-card")
+        .forEach((el) => {
+          observer.observe(el);
+        });
+
+      // Hero slider functionality
+      const sliderDots = document.querySelectorAll(".slider-dot");
+      const heroTitles = [
+        "Emphasis Item 2 Title",
+        "Emphasis Item 3 Title",
+        "Emphasis Item 4 Title",
+      ];
+      const heroSubtitles = [
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      ];
+
+      let currentSlide = 0;
+
+      function updateSlide(index) {
+        // Update dots
+        sliderDots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+        });
+
+        // Update content
+        const heroTitle = document.querySelector(".hero-title");
+        const heroSubtitle = document.querySelector(".hero-subtitle");
+
+        heroTitle.textContent = heroTitles[index];
+        heroSubtitle.textContent = heroSubtitles[index];
+
+        currentSlide = index;
+      }
+
+      // Add click listeners to dots
+      sliderDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => updateSlide(index));
+      });
+
+      // Auto-advance slides
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % heroTitles.length;
+        updateSlide(currentSlide);
+      }, 5000);
+
+      // Mobile navigation toggle
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add scroll effect to header
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 100) {
+          header.style.background = "rgba(255, 255, 255, 0.95)";
+          header.style.backdropFilter = "blur(10px)";
+        } else {
+          header.style.background = "var(--fortinet-white)";
+          header.style.backdropFilter = "none";
+        }
+      });
+
+      // News slider scroll functionality
+      const newsSlider = document.querySelector(".news-slider");
+      let isScrolling = false;
+
+      function autoScrollNews() {
+        if (!isScrolling && newsSlider) {
+          newsSlider.scrollBy({
+            left: 370,
+            behavior: "smooth",
+          });
+
+          // Reset to beginning if at end
+          if (
+            newsSlider.scrollLeft >=
+            newsSlider.scrollWidth - newsSlider.clientWidth - 50
+          ) {
+            setTimeout(() => {
+              newsSlider.scrollTo({ left: 0, behavior: "smooth" });
+            }, 2000);
+          }
+        }
+      }
+
+      // Auto-scroll news every 4 seconds
+      setInterval(autoScrollNews, 4000);
+
+      // Prevent auto-scroll when user is manually scrolling
+      if (newsSlider) {
+        newsSlider.addEventListener("scroll", () => {
+          isScrolling = true;
+          clearTimeout(newsSlider.scrollTimeout);
+          newsSlider.scrollTimeout = setTimeout(() => {
+            isScrolling = false;
+          }, 2000);
+        });
+      }
+
+      // Add loading animation for images
+      document.querySelectorAll("img").forEach((img) => {
+        img.addEventListener("load", () => {
+          img.style.opacity = "1";
+        });
+        img.style.opacity = "0";
+        img.style.transition = "opacity 0.3s ease";
+      });
+
+      console.log("Fortinet homepage clone loaded successfully!");
+    </script>
+  </body>
+</html>

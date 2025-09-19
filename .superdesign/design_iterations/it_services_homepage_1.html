@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      TripleeTech - Enterprise IT Solutions & Cybersecurity Services
+    </title>
+
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Custom Theme -->
+    <!-- <link rel="stylesheet" href="it_services_theme_1.css" /> -->
+    <style>
+      /* IT Services Company Theme - Professional & Modern */
+      :root {
+        /* Color Palette - Professional Tech Blue with Trust-building accents */
+        --background: oklch(0.08 0.02 240); /* Deep navy blue */
+        --foreground: oklch(0.97 0.01 240); /* Crisp white */
+        --card: oklch(0.12 0.03 240); /* Elevated dark blue */
+        --card-foreground: oklch(0.95 0.01 240);
+        --popover: oklch(0.12 0.03 240);
+        --popover-foreground: oklch(0.95 0.01 240);
+        --primary: oklch(0.65 0.28 220); /* Professional blue */
+        --primary-foreground: oklch(0.99 0 0);
+        --secondary: oklch(0.72 0.18 160); /* Success green accent */
+        --secondary-foreground: oklch(0.1 0.02 240);
+        --muted: oklch(0.2 0.04 240); /* Muted blue-gray */
+        --muted-foreground: oklch(0.7 0.02 240);
+        --accent: oklch(0.75 0.22 30); /* Warning orange for CTAs */
+        --accent-foreground: oklch(0.1 0.02 240);
+        --destructive: oklch(0.62 0.28 15); /* Error red */
+        --destructive-foreground: oklch(0.99 0 0);
+        --border: oklch(0.25 0.05 240); /* Subtle borders */
+        --input: oklch(0.25 0.05 240);
+        --ring: oklch(0.65 0.28 220); /* Focus ring */
+
+        /* Chart colors for potential data visualization */
+        --chart-1: oklch(0.65 0.28 220);
+        --chart-2: oklch(0.72 0.18 160);
+        --chart-3: oklch(0.75 0.22 30);
+        --chart-4: oklch(0.58 0.25 280);
+        --chart-5: oklch(0.68 0.2 350);
+
+        /* Typography - Professional and readable */
+        --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          "Noto Sans", sans-serif;
+        --font-serif: "Merriweather", ui-serif, Georgia, Cambria,
+          "Times New Roman", Times, serif;
+        --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+          Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+        /* Border radius - Clean and professional */
+        --radius: 0.5rem;
+        --radius-sm: calc(var(--radius) - 4px);
+        --radius-md: calc(var(--radius) - 2px);
+        --radius-lg: var(--radius);
+        --radius-xl: calc(var(--radius) + 4px);
+
+        /* Shadows - Subtle depth for trust and professionalism */
+        --shadow-2xs: 0 1px 2px 0px hsl(240 50% 4% / 0.15);
+        --shadow-xs: 0 1px 3px 0px hsl(240 50% 4% / 0.15);
+        --shadow-sm: 0 1px 3px 0px hsl(240 50% 4% / 0.2),
+          0 1px 2px -1px hsl(240 50% 4% / 0.2);
+        --shadow: 0 1px 3px 0px hsl(240 50% 4% / 0.2),
+          0 1px 2px -1px hsl(240 50% 4% / 0.2);
+        --shadow-md: 0 4px 6px -1px hsl(240 50% 4% / 0.25),
+          0 2px 4px -1px hsl(240 50% 4% / 0.15);
+        --shadow-lg: 0 10px 15px -3px hsl(240 50% 4% / 0.3),
+          0 4px 6px -2px hsl(240 50% 4% / 0.15);
+        --shadow-xl: 0 20px 25px -5px hsl(240 50% 4% / 0.35),
+          0 10px 10px -5px hsl(240 50% 4% / 0.15);
+        --shadow-2xl: 0 25px 50px -12px hsl(240 50% 4% / 0.4);
+
+        /* Letter spacing - Professional readability */
+        --tracking-normal: 0em;
+        --tracking-wide: 0.025em;
+        --tracking-wider: 0.05em;
+
+        /* Spacing system */
+        --spacing: 0.25rem;
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 0.75rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-2xl: 3rem;
+        --spacing-3xl: 4rem;
+      }
+
+      /* Professional gradient overlays for hero sections */
+      .gradient-overlay {
+        background: linear-gradient(
+          135deg,
+          oklch(0.65 0.28 220 / 0.9) 0%,
+          oklch(0.12 0.03 240 / 0.95) 100%
+        );
+      }
+
+      /* Service card gradient backgrounds */
+      .service-card-gradient {
+        background: linear-gradient(
+          145deg,
+          oklch(0.14 0.04 240) 0%,
+          oklch(0.1 0.02 240) 100%
+        );
+      }
+
+      /* Trust indicator styling */
+      .trust-badge {
+        background: linear-gradient(
+          90deg,
+          oklch(0.72 0.18 160 / 0.1) 0%,
+          oklch(0.65 0.28 220 / 0.1) 100%
+        );
+        border: 1px solid oklch(0.72 0.18 160 / 0.3);
+      }
+    </style>
+
+    <style>
+      /* Base styles with theme integration */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-sans) !important;
+        background-color: var(--background) !important;
+        color: var(--foreground) !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-sans) !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        color: var(--foreground) !important;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem) !important;
+        font-weight: 800 !important;
+        letter-spacing: var(--tracking-wide) !important;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3rem) !important;
+      }
+
+      h3 {
+        font-size: clamp(1.5rem, 3vw, 2rem) !important;
+      }
+
+      /* Navigation */
+      .navbar {
+        background: rgba(var(--card), 0.95) !important;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        animation: slideDown 0.6s ease-out;
+      }
+
+      .logo {
+        font-size: 1.5rem !important;
+        font-weight: 800 !important;
+        color: var(--primary) !important;
+        text-decoration: none !important;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        animation: logoLoad 0.8s ease-out;
+      }
+
+      .logo-icon {
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: iconSpin 0.8s ease-out;
+      }
+
+      .nav-link {
+        color: var(--muted-foreground) !important;
+        text-decoration: none !important;
+        font-weight: 500 !important;
+        padding: 0.5rem 1rem !important;
+        border-radius: var(--radius-sm) !important;
+        transition: all 0.2s ease-out !important;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: var(--foreground) !important;
+        background-color: rgba(var(--primary), 0.1) !important;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: all 0.3s ease-out;
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover::after {
+        width: 80%;
+      }
+
+      /* Buttons */
+      .btn-primary {
+        background: var(--primary) !important;
+        color: var(--primary-foreground) !important;
+        border: none !important;
+        padding: 0.75rem 2rem !important;
+        border-radius: var(--radius) !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        transition: all 0.3s ease-out !important;
+        box-shadow: var(--shadow) !important;
+      }
+
+      .btn-primary:hover {
+        background: var(--accent) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: var(--shadow-lg) !important;
+      }
+
+      .btn-secondary {
+        background: transparent !important;
+        color: var(--foreground) !important;
+        border: 2px solid var(--border) !important;
+        padding: 0.75rem 2rem !important;
+        border-radius: var(--radius) !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        transition: all 0.3s ease-out !important;
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--primary) !important;
+        background: rgba(var(--primary), 0.1) !important;
+        transform: translateY(-2px) !important;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          135deg,
+          var(--background) 0%,
+          var(--card) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("../../public/images/hero-xlarge.jpg") center/cover;
+        opacity: 0.1;
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        animation: heroContentSlide 1s ease-out;
+      }
+
+      .hero-title {
+        margin-bottom: 1.5rem !important;
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem !important;
+        color: var(--muted-foreground) !important;
+        margin-bottom: 2rem !important;
+        max-width: 60ch !important;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+      }
+
+      .hero-buttons {
+        display: flex !important;
+        gap: 1rem !important;
+        flex-wrap: wrap !important;
+        animation: fadeInUp 0.8s ease-out 0.4s both;
+      }
+
+      .hero-image {
+        animation: fadeInRight 1s ease-out 0.6s both;
+      }
+
+      .hero-image img {
+        border-radius: var(--radius-lg) !important;
+        box-shadow: var(--shadow-2xl) !important;
+        border: 1px solid var(--border) !important;
+      }
+
+      /* Trust Badges */
+      .trust-badges {
+        margin-top: 3rem !important;
+        animation: fadeInUp 0.8s ease-out 0.8s both;
+      }
+
+      .trust-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        padding: 0.5rem 1rem !important;
+        background: var(--trust-badge) !important;
+        border: 1px solid rgba(var(--secondary), 0.3) !important;
+        border-radius: var(--radius) !important;
+        font-size: 0.875rem !important;
+        font-weight: 500 !important;
+        color: var(--muted-foreground) !important;
+        margin-right: 1rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      /* Client Logos */
+      .client-logos {
+        background: var(--card) !important;
+        border-top: 1px solid var(--border) !important;
+        border-bottom: 1px solid var(--border) !important;
+      }
+
+      .logo-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+        gap: 2rem !important;
+        align-items: center !important;
+        opacity: 0.7 !important;
+      }
+
+      .logo-grid img {
+        max-height: 48px !important;
+        width: auto !important;
+        filter: grayscale(1) brightness(1.2) !important;
+        transition: all 0.3s ease-out !important;
+      }
+
+      .logo-grid img:hover {
+        filter: grayscale(0) brightness(1) !important;
+        transform: scale(1.05) !important;
+      }
+
+      /* Services Grid */
+      .services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+        gap: 2rem !important;
+      }
+
+      .service-card {
+        background: var(--service-card-gradient) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: var(--radius-lg) !important;
+        padding: 2rem !important;
+        transition: all 0.3s ease-out !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        transform: scaleX(0);
+        transition: transform 0.3s ease-out;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: var(--shadow-xl) !important;
+        border-color: rgba(var(--primary), 0.3) !important;
+      }
+
+      .service-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .service-icon {
+        width: 64px !important;
+        height: 64px !important;
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary)
+        ) !important;
+        border-radius: var(--radius) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 1.5rem !important;
+        transition: all 0.3s ease-out !important;
+      }
+
+      .service-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg) !important;
+      }
+
+      .service-title {
+        color: var(--foreground) !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .service-description {
+        color: var(--muted-foreground) !important;
+        line-height: 1.6 !important;
+      }
+
+      /* Why Choose Us Section */
+      .why-choose-us {
+        background: linear-gradient(
+          135deg,
+          var(--card) 0%,
+          var(--background) 100%
+        ) !important;
+      }
+
+      .feature-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .feature-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+        margin-bottom: 1.5rem !important;
+        padding: 1rem !important;
+        border-radius: var(--radius) !important;
+        transition: all 0.3s ease-out !important;
+      }
+
+      .feature-item:hover {
+        background: rgba(var(--primary), 0.05) !important;
+        transform: translateX(8px) !important;
+      }
+
+      .feature-icon {
+        width: 24px !important;
+        height: 24px !important;
+        color: var(--secondary) !important;
+        flex-shrink: 0 !important;
+        margin-top: 0.25rem !important;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: var(--card) !important;
+        border-top: 1px solid var(--border) !important;
+      }
+
+      .contact-card {
+        background: var(--background) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: var(--radius-lg) !important;
+        padding: 2rem !important;
+        text-align: center !important;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--background) !important;
+        border-top: 1px solid var(--border) !important;
+        color: var(--muted-foreground) !important;
+      }
+
+      /* Animations */
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes logoLoad {
+        from {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes iconSpin {
+        from {
+          transform: rotate(-10deg) scale(0.9);
+          opacity: 0;
+        }
+        to {
+          transform: rotate(0deg) scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          transform: translateX(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes heroContentSlide {
+        from {
+          transform: translateY(40px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero {
+          min-height: 80vh !important;
+          text-align: center !important;
+        }
+
+        .hero-buttons {
+          justify-content: center !important;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        .logo-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 1rem !important;
+        }
+
+        .trust-badges {
+          text-align: center !important;
+        }
+      }
+
+      /* Reduced motion support */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <a href="#" class="logo">
+            <div class="logo-icon">
+              <i data-lucide="shield-check" class="w-5 h-5 text-white"></i>
+            </div>
+            TripleeTech
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="hidden md:block">
+            <a href="#contact" class="btn-primary">
+              Get Free Consultation
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              type="button"
+              class="text-gray-400 hover:text-white"
+              data-collapse-toggle="mobile-menu">
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden" id="mobile-menu">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#services" class="nav-link block">Services</a>
+            <a href="#about" class="nav-link block">About</a>
+            <a href="#portfolio" class="nav-link block">Portfolio</a>
+            <a href="#contact" class="nav-link block">Contact</a>
+            <div class="pt-4">
+              <a href="#contact" class="btn-primary w-full justify-center">
+                Get Free Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              Enterprise IT Solutions That Drive
+              <span style="color: var(--primary)">Innovation</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Secure, scalable, and reliable IT infrastructure designed for
+              modern businesses. From cybersecurity to cloud migration, we're
+              your trusted technology partner.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#contact" class="btn-primary">
+                Start Your Project
+                <i data-lucide="rocket" class="w-4 h-4"></i>
+              </a>
+              <a href="#services" class="btn-secondary">
+                View Our Services
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <div class="trust-badges">
+              <span class="trust-badge">
+                <i
+                  data-lucide="shield-check"
+                  class="w-4 h-4 text-green-400"></i>
+                ISO 27001 Certified
+              </span>
+              <span class="trust-badge">
+                <i data-lucide="award" class="w-4 h-4 text-blue-400"></i>
+                Microsoft Gold Partner
+              </span>
+              <span class="trust-badge">
+                <i data-lucide="clock" class="w-4 h-4 text-orange-400"></i>
+                24/7 Support
+              </span>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img
+              src="../../public/images/banner-large.jpg"
+              alt="Modern IT Infrastructure"
+              class="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Logos -->
+    <section class="client-logos py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2
+            class="text-lg font-semibold text-gray-400 uppercase tracking-wider">
+            Trusted by Industry Leaders
+          </h2>
+        </div>
+        <div class="logo-grid">
+          <img src="../../public/images/hp.png" alt="HP" />
+          <img src="../../public/images/lenovo.png" alt="Lenovo" />
+          <img
+            src="../../public/images/microsoft-silver.png"
+            alt="Microsoft Partner" />
+          <img
+            src="../../public/images/fortinet-silver.png"
+            alt="Fortinet Partner" />
+          <img src="../../public/images/touchbistro.png" alt="TouchBistro" />
+          <img src="../../public/images/cloudli.png" alt="Cloudli" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="mb-4">Comprehensive IT Services</h2>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+            From cybersecurity to cloud infrastructure, we provide end-to-end IT
+            solutions that scale with your business and protect your digital
+            assets.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="shield" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="service-title">Cybersecurity Solutions</h3>
+            <p class="service-description">
+              Comprehensive security frameworks including threat detection,
+              vulnerability assessments, and compliance management to protect
+              your business from cyber threats.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="cloud" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="service-title">Cloud Infrastructure</h3>
+            <p class="service-description">
+              Seamless cloud migration, optimization, and management services
+              for AWS, Azure, and Google Cloud platforms with 99.9% uptime
+              guarantee.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="settings" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="service-title">IT Support & Maintenance</h3>
+            <p class="service-description">
+              24/7 proactive monitoring, maintenance, and support for your IT
+              infrastructure with rapid response times and expert technical
+              assistance.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="network" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="service-title">Network Solutions</h3>
+            <p class="service-description">
+              Design, implementation, and optimization of secure network
+              infrastructure including SD-WAN, firewalls, and wireless
+              solutions.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="database" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="service-title">Data Management</h3>
+            <p class="service-description">
+              Backup, recovery, and data analytics solutions that ensure your
+              business-critical information is protected, accessible, and
+              actionable.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="users" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="service-title">IT Consulting</h3>
+            <p class="service-description">
+              Strategic technology planning and digital transformation guidance
+              to align your IT investments with business objectives and growth
+              plans.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="about" class="why-choose-us py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="mb-6">Why Choose TripleeTech?</h2>
+            <p class="text-xl text-gray-400 mb-8">
+              With over a decade of experience, we've built a reputation for
+              delivering reliable, innovative IT solutions that drive business
+              success.
+            </p>
+
+            <ul class="feature-list">
+              <li class="feature-item">
+                <i data-lucide="check-circle" class="feature-icon"></i>
+                <div>
+                  <h4 class="font-semibold text-white mb-2">Expert Team</h4>
+                  <p class="text-gray-400">
+                    Certified professionals with deep expertise in enterprise
+                    technologies and industry best practices.
+                  </p>
+                </div>
+              </li>
+
+              <li class="feature-item">
+                <i data-lucide="clock" class="feature-icon"></i>
+                <div>
+                  <h4 class="font-semibold text-white mb-2">24/7 Support</h4>
+                  <p class="text-gray-400">
+                    Round-the-clock monitoring and support ensuring your systems
+                    are always running optimally.
+                  </p>
+                </div>
+              </li>
+
+              <li class="feature-item">
+                <i data-lucide="trending-up" class="feature-icon"></i>
+                <div>
+                  <h4 class="font-semibold text-white mb-2">Proven Results</h4>
+                  <p class="text-gray-400">
+                    Track record of successful implementations with 99.9% client
+                    satisfaction and system uptime.
+                  </p>
+                </div>
+              </li>
+
+              <li class="feature-item">
+                <i data-lucide="scale" class="feature-icon"></i>
+                <div>
+                  <h4 class="font-semibold text-white mb-2">
+                    Scalable Solutions
+                  </h4>
+                  <p class="text-gray-400">
+                    Flexible architectures that grow with your business and
+                    adapt to changing technology needs.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <img
+              src="../../public/images/team.jpg"
+              alt="TripleeTech Team"
+              class="w-full h-auto rounded-lg shadow-2xl" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="contact-card">
+          <h2 class="mb-6">Ready to Transform Your IT Infrastructure?</h2>
+          <p class="text-xl text-gray-400 mb-8">
+            Get a free consultation and discover how we can optimize your
+            technology stack for better performance, security, and scalability.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="tel:+1-555-0123" class="btn-primary">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              Call (555) 123-4567
+            </a>
+            <a href="mailto:info@tripleetech.com" class="btn-secondary">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              Email Us
+            </a>
+          </div>
+
+          <div class="mt-8 text-sm text-gray-500">
+            <p>📍 123 Technology Drive, Innovation District, Toronto, ON</p>
+            <p>⏰ Monday - Friday: 8:00 AM - 6:00 PM EST</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="logo mb-4">
+              <div class="logo-icon">
+                <i data-lucide="shield-check" class="w-5 h-5 text-white"></i>
+              </div>
+              TripleeTech
+            </div>
+            <p class="text-gray-400">
+              Your trusted partner for enterprise IT solutions and cybersecurity
+              services.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-white mb-4">Services</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Cybersecurity</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Cloud Solutions</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >IT Support</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Network Solutions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-white mb-4">Company</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors">Blog</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-white mb-4">Contact</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>📞 (555) 123-4567</li>
+              <li>✉️ info@tripleetech.com</li>
+              <li>📍 Toronto, ON</li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          <p>
+            &copy; 2025 TripleeTech. All rights reserved. | Privacy Policy |
+            Terms of Service
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe service cards and other elements
+      document
+        .querySelectorAll(".service-card, .feature-item, .trust-badge")
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "all 0.6s ease-out";
+          observer.observe(el);
+        });
+    </script>
+  </body>
+</html>

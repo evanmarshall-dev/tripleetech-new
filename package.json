@@ -1,0 +1,12 @@
+{
+  "name": "tripleetech-screenshot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "screenshot": "node scripts/screenshot.js"
+  },
+  "dependencies": {
+    "puppeteer": "^23.7.1"
+  }
+}

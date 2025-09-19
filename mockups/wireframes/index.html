@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wireframes – Fortinet screenshot concepts</title>
+    <!-- <link rel="stylesheet" href="../styles/tokens.css" /> -->
+    <style>
+      :root {
+        /* Color tokens */
+        --color-bg: #0f1221; /* deep navy */
+        --color-surface: #171a2f; /* elevated panel */
+        --color-primary: #00e0ff; /* cyan accent */
+        --color-primary-600: #00b7d4;
+        --color-secondary: #9effa2; /* lime accent */
+        --color-text: #e7ecf3; /* high contrast text */
+        --color-text-muted: #b6c0d1; /* secondary text */
+        --color-border: #2a2e45; /* subtle borders */
+        --color-focus: #ffbf47; /* WCAG-visible focus */
+
+        /* Typography */
+        --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+        --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+
+        --fs-300: 0.875rem; /* 14px */
+        --fs-400: 1rem; /* 16px base */
+        --fs-500: 1.125rem; /* 18px */
+        --fs-600: 1.25rem; /* 20px */
+        --fs-700: 1.5rem; /* 24px */
+        --fs-800: 2rem; /* 32px */
+
+        /* Spacing */
+        --sp-1: 0.25rem;
+        --sp-2: 0.5rem;
+        --sp-3: 0.75rem;
+        --sp-4: 1rem;
+        --sp-5: 1.5rem;
+        --sp-6: 2rem;
+        --sp-8: 3rem;
+        --radius: 0.75rem;
+        --radius-sm: 0.5rem;
+        --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.1);
+        --shadow-2: 0 4px 16px rgba(0, 0, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        font-size: var(--fs-400);
+        color: var(--color-text);
+        background: var(--color-bg);
+        line-height: 1.55;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--color-focus);
+        outline-offset: 2px;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin-inline: auto;
+        padding-inline: var(--sp-4);
+      }
+
+      .card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-1);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.625rem 0.9rem;
+        font-weight: 600;
+        color: #071318;
+        background: var(--color-primary);
+        border: 0;
+        border-radius: 0.6rem;
+        text-decoration: none;
+      }
+
+      .btn.secondary {
+        background: var(--color-secondary);
+      }
+
+      .badge {
+        border: 1px solid var(--color-border);
+        border-radius: 999px;
+        padding: 0.25rem 0.5rem;
+        color: var(--color-text-muted);
+      }
+    </style>
+    <style>
+      /* Mobile-first, low-fi wireframe styles */
+      header,
+      main,
+      footer {
+        padding: var(--sp-5) var(--sp-4);
+      }
+      header {
+        border-bottom: 1px dashed var(--color-border);
+      }
+      .logo {
+        font-weight: 800;
+        font-size: var(--fs-600);
+        letter-spacing: 0.5px;
+      }
+
+      nav {
+        margin-block: var(--sp-3);
+      }
+      nav ul {
+        display: flex;
+        gap: var(--sp-3);
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      nav a {
+        color: var(--color-text-muted);
+        text-decoration: none;
+      }
+
+      .hero {
+        padding-block: var(--sp-6);
+        display: grid;
+        gap: var(--sp-4);
+      }
+      .hero h1 {
+        font-size: var(--fs-800);
+        margin: 0;
+      }
+      .hero .actions {
+        display: flex;
+        gap: var(--sp-3);
+        flex-wrap: wrap;
+      }
+
+      .grid {
+        display: grid;
+        gap: var(--sp-4);
+      }
+      .grid.cards {
+        grid-template-columns: 1fr;
+      }
+
+      /* Simple media blocks for images from /public/images */
+      .logo-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--sp-4);
+        align-items: center;
+        padding: 0;
+        margin: 0;
+      }
+      .logo-row li {
+        list-style: none;
+      }
+      .logo-row img {
+        width: 100%;
+        max-height: 40px;
+        object-fit: contain;
+        filter: grayscale(1) contrast(1.2);
+        opacity: 0.9;
+      }
+      .media-frame {
+        border: 2px dashed var(--color-border);
+        border-radius: var(--radius-sm);
+        padding: var(--sp-3);
+        display: grid;
+        place-items: center;
+        min-height: 180px;
+      }
+
+      .wf-block {
+        border: 2px dashed var(--color-border);
+        border-radius: var(--radius-sm);
+        padding: var(--sp-4);
+      }
+      .wf-title {
+        font-weight: 700;
+        color: var(--color-text);
+        margin-bottom: var(--sp-2);
+      }
+      .wf-text {
+        color: var(--color-text-muted);
+      }
+
+      @media (width >= 768px) {
+        .grid.cards {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .hero {
+          grid-template-columns: 1.2fr 0.8fr;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="sr-only" href="#main">Skip to main</a>
+    <header class="container" role="banner">
+      <div class="logo" aria-label="Brand">YourBrand</div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="container" role="main">
+      <section class="hero">
+        <div>
+          <div class="wf-title">Value Proposition</div>
+          <h1>Secure networking without the complexity</h1>
+          <p class="wf-text">
+            Short paragraph explaining the key benefit. Keep it crisp: one or
+            two lines that speak to your audience.
+          </p>
+          <div class="actions">
+            <a class="btn" href="#cta">Get started</a>
+            <a class="btn secondary" href="#learn">Learn more</a>
+          </div>
+        </div>
+        <figure class="media-frame" aria-label="Hero placeholder image">
+          <img
+            src="../../public/images/hero-xlarge.jpg"
+            alt="Abstract hero backdrop" />
+        </figure>
+      </section>
+
+      <section class="grid cards" aria-labelledby="features">
+        <h2 id="features" class="sr-only">Key features</h2>
+        <article class="wf-block">
+          <div class="wf-title">Feature 1</div>
+          <p class="wf-text">Brief supporting text.</p>
+        </article>
+        <article class="wf-block">
+          <div class="wf-title">Feature 2</div>
+          <p class="wf-text">Brief supporting text.</p>
+        </article>
+        <article class="wf-block">
+          <div class="wf-title">Feature 3</div>
+          <p class="wf-text">Brief supporting text.</p>
+        </article>
+      </section>
+
+      <section class="wf-block" aria-labelledby="proof">
+        <h2 id="proof" class="wf-title">Logos / Social proof</h2>
+        <ul class="logo-row" aria-label="Customer logos">
+          <li><img src="../../public/images/hp.png" alt="HP" /></li>
+          <li><img src="../../public/images/lenovo.png" alt="Lenovo" /></li>
+          <li>
+            <img
+              src="../../public/images/microsoft-silver.png"
+              alt="Microsoft Partner – Silver" />
+          </li>
+          <li>
+            <img
+              src="../../public/images/fortinet-silver.png"
+              alt="Fortinet Partner – Silver" />
+          </li>
+          <li>
+            <img src="../../public/images/touchbistro.png" alt="TouchBistro" />
+          </li>
+          <li><img src="../../public/images/cloudli.png" alt="Cloudli" /></li>
+        </ul>
+      </section>
+
+      <section class="wf-block" aria-labelledby="team">
+        <h2 id="team" class="wf-title">Our team</h2>
+        <figure class="media-frame">
+          <img src="../../public/images/team.jpg" alt="Team photo" />
+        </figure>
+      </section>
+    </main>
+
+    <footer class="container" role="contentinfo">
+      <p class="wf-text">© YourBrand – All rights reserved.</p>
+    </footer>
+  </body>
+</html>

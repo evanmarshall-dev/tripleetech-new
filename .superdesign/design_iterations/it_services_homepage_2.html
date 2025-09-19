@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TripleeTech - Elite Enterprise IT Solutions & Cybersecurity</title>
+
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <!-- Google Fonts - Enhanced Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Custom Theme -->
+    <!-- <link rel="stylesheet" href="it_services_theme_2.css" /> -->
+    <style>
+      /* IT Services Company Theme - Iteration 2: Refined & Modern */
+      :root {
+        /* Color Palette - Sophisticated dark theme with trust-inspiring accents */
+        --background: oklch(0.06 0.015 250); /* Deeper navy */
+        --foreground: oklch(0.98 0.005 250); /* Pristine white */
+        --card: oklch(0.1 0.025 250); /* Elevated surface */
+        --card-foreground: oklch(0.96 0.005 250);
+        --popover: oklch(0.1 0.025 250);
+        --popover-foreground: oklch(0.96 0.005 250);
+        --primary: oklch(0.7 0.25 210); /* Refined blue */
+        --primary-foreground: oklch(0.08 0.02 250);
+        --secondary: oklch(0.78 0.15 140); /* Trustworthy green */
+        --secondary-foreground: oklch(0.08 0.02 250);
+        --muted: oklch(0.18 0.03 250); /* Subtle background */
+        --muted-foreground: oklch(0.72 0.015 250);
+        --accent: oklch(0.72 0.2 45); /* Premium gold accent */
+        --accent-foreground: oklch(0.08 0.02 250);
+        --destructive: oklch(0.6 0.26 20); /* Alert red */
+        --destructive-foreground: oklch(0.98 0 0);
+        --border: oklch(0.22 0.04 250); /* Refined borders */
+        --input: oklch(0.22 0.04 250);
+        --ring: oklch(0.7 0.25 210); /* Focus indicator */
+
+        /* Chart colors for data visualization */
+        --chart-1: oklch(0.7 0.25 210);
+        --chart-2: oklch(0.78 0.15 140);
+        --chart-3: oklch(0.72 0.2 45);
+        --chart-4: oklch(0.65 0.22 300);
+        --chart-5: oklch(0.7 0.18 15);
+
+        /* Typography - Enhanced readability */
+        --font-sans: "Geist", "Inter", ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          sans-serif;
+        --font-serif: "Merriweather", ui-serif, Georgia, Cambria,
+          "Times New Roman", Times, serif;
+        --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace,
+          SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+        /* Border radius - Softer, more modern */
+        --radius: 0.75rem;
+        --radius-sm: calc(var(--radius) - 4px);
+        --radius-md: calc(var(--radius) - 2px);
+        --radius-lg: var(--radius);
+        --radius-xl: calc(var(--radius) + 6px);
+
+        /* Enhanced shadows for depth */
+        --shadow-2xs: 0 1px 3px 0px hsl(250 60% 4% / 0.12);
+        --shadow-xs: 0 1px 4px 0px hsl(250 60% 4% / 0.15);
+        --shadow-sm: 0 2px 6px 0px hsl(250 60% 4% / 0.18),
+          0 1px 3px -1px hsl(250 60% 4% / 0.18);
+        --shadow: 0 3px 8px 0px hsl(250 60% 4% / 0.2),
+          0 1px 3px -1px hsl(250 60% 4% / 0.2);
+        --shadow-md: 0 6px 12px -2px hsl(250 60% 4% / 0.25),
+          0 3px 7px -1px hsl(250 60% 4% / 0.15);
+        --shadow-lg: 0 12px 24px -4px hsl(250 60% 4% / 0.3),
+          0 6px 12px -2px hsl(250 60% 4% / 0.15);
+        --shadow-xl: 0 24px 48px -8px hsl(250 60% 4% / 0.35),
+          0 12px 24px -4px hsl(250 60% 4% / 0.15);
+        --shadow-2xl: 0 32px 64px -12px hsl(250 60% 4% / 0.4);
+
+        /* Refined spacing */
+        --spacing: 0.25rem;
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 0.75rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-2xl: 3rem;
+        --spacing-3xl: 4rem;
+        --spacing-4xl: 6rem;
+      }
+
+      /* Premium gradient overlays */
+      .premium-gradient {
+        background: linear-gradient(
+          135deg,
+          oklch(0.7 0.25 210 / 0.9) 0%,
+          oklch(0.1 0.025 250 / 0.95) 100%
+        );
+      }
+
+      /* Enhanced service card backgrounds */
+      .premium-service-card {
+        background: linear-gradient(
+          145deg,
+          oklch(0.12 0.035 250) 0%,
+          oklch(0.08 0.02 250) 100%
+        );
+        border: 1px solid oklch(0.25 0.05 250);
+      }
+
+      /* Luxury trust elements */
+      .luxury-badge {
+        background: linear-gradient(
+          90deg,
+          oklch(0.78 0.15 140 / 0.15) 0%,
+          oklch(0.7 0.25 210 / 0.15) 50%,
+          oklch(0.72 0.2 45 / 0.15) 100%
+        );
+        border: 1px solid oklch(0.78 0.15 140 / 0.4);
+        backdrop-filter: blur(8px);
+      }
+    </style>
+
+    <style>
+      /* Enhanced base styles with premium feel */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-sans) !important;
+        background-color: var(--background) !important;
+        color: var(--foreground) !important;
+        line-height: 1.7 !important;
+        margin: 0 !important;
+        overflow-x: hidden;
+        font-weight: 400 !important;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-sans) !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        color: var(--foreground) !important;
+        letter-spacing: -0.02em !important;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 6vw, 5rem) !important;
+        font-weight: 800 !important;
+      }
+
+      h2 {
+        font-size: clamp(2.2rem, 4.5vw, 3.5rem) !important;
+      }
+
+      h3 {
+        font-size: clamp(1.6rem, 3vw, 2.2rem) !important;
+      }
+
+      /* Premium Navigation */
+      .navbar {
+        background: rgba(var(--card), 0.98) !important;
+        backdrop-filter: blur(16px) saturate(180%) !important;
+        border-bottom: 1px solid var(--border) !important;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .logo {
+        font-size: 1.75rem !important;
+        font-weight: 800 !important;
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary)
+        ) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        text-decoration: none !important;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        animation: logoLoad 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .logo-icon {
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-md);
+        animation: iconFloat 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .nav-link {
+        color: var(--muted-foreground) !important;
+        text-decoration: none !important;
+        font-weight: 500 !important;
+        padding: 0.75rem 1.25rem !important;
+        border-radius: var(--radius-sm) !important;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav-link:hover {
+        color: var(--foreground) !important;
+        background-color: rgba(var(--primary), 0.12) !important;
+        transform: translateY(-1px) !important;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        transform: scaleX(0);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .nav-link:hover::before {
+        transform: scaleX(1);
+      }
+
+      /* Premium Buttons */
+      .btn-primary {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary)
+        ) !important;
+        color: var(--primary-foreground) !important;
+        border: none !important;
+        padding: 1rem 2.5rem !important;
+        border-radius: var(--radius) !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        box-shadow: var(--shadow-md) !important;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.6s;
+      }
+
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px) scale(1.02) !important;
+        box-shadow: var(--shadow-xl) !important;
+        background: linear-gradient(
+          135deg,
+          var(--accent),
+          var(--primary)
+        ) !important;
+      }
+
+      .btn-secondary {
+        background: rgba(var(--foreground), 0.05) !important;
+        color: var(--foreground) !important;
+        border: 2px solid var(--border) !important;
+        padding: 1rem 2.5rem !important;
+        border-radius: var(--radius) !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        backdrop-filter: blur(8px) !important;
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--primary) !important;
+        background: rgba(var(--primary), 0.15) !important;
+        transform: translateY(-3px) !important;
+        box-shadow: var(--shadow-lg) !important;
+      }
+
+      /* Enhanced Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: radial-gradient(
+          ellipse at top,
+          var(--card) 0%,
+          var(--background) 70%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("../../public/images/hero-xlarge.jpg") center/cover;
+        opacity: 0.08;
+        z-index: 1;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 200%;
+        background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+        opacity: 0.03;
+        z-index: 1;
+        animation: heroOrb 20s linear infinite;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        animation: heroContentSlide 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .hero-title {
+        margin-bottom: 2rem !important;
+        animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .hero-title .gradient-text {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary),
+          var(--accent)
+        ) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+      }
+
+      .hero-subtitle {
+        font-size: 1.35rem !important;
+        color: var(--muted-foreground) !important;
+        margin-bottom: 2.5rem !important;
+        max-width: 65ch !important;
+        line-height: 1.6 !important;
+        animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+      }
+
+      .hero-buttons {
+        display: flex !important;
+        gap: 1.5rem !important;
+        flex-wrap: wrap !important;
+        animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+      }
+
+      .hero-image {
+        animation: fadeInRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+      }
+
+      .hero-image img {
+        border-radius: var(--radius-xl) !important;
+        box-shadow: var(--shadow-2xl) !important;
+        border: 1px solid var(--border) !important;
+      }
+
+      /* Premium Trust Badges */
+      .trust-badges {
+        margin-top: 3.5rem !important;
+        animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+      }
+
+      .trust-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+        padding: 0.75rem 1.5rem !important;
+        background: var(--luxury-badge) !important;
+        border: 1px solid rgba(var(--secondary), 0.3) !important;
+        border-radius: var(--radius-lg) !important;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+        color: var(--muted-foreground) !important;
+        margin-right: 1.25rem !important;
+        margin-bottom: 0.75rem !important;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      .trust-badge:hover {
+        transform: translateY(-2px) scale(1.05) !important;
+        box-shadow: var(--shadow-lg) !important;
+        border-color: var(--secondary) !important;
+      }
+
+      /* Enhanced Client Logos */
+      .client-logos {
+        background: linear-gradient(
+          180deg,
+          var(--card),
+          var(--background)
+        ) !important;
+        border-top: 1px solid var(--border) !important;
+        border-bottom: 1px solid var(--border) !important;
+      }
+
+      .logo-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+        gap: 3rem !important;
+        align-items: center !important;
+      }
+
+      .logo-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        border-radius: var(--radius);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        background: rgba(var(--foreground), 0.02);
+      }
+
+      .logo-wrapper:hover {
+        background: rgba(var(--primary), 0.08);
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .logo-grid img {
+        max-height: 52px !important;
+        width: auto !important;
+        filter: grayscale(1) brightness(1.3) contrast(1.1) !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        opacity: 0.8 !important;
+      }
+
+      .logo-wrapper:hover img {
+        filter: grayscale(0) brightness(1) !important;
+        opacity: 1 !important;
+        transform: scale(1.1) !important;
+      }
+
+      /* Premium Services Grid */
+      .services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+        gap: 2.5rem !important;
+      }
+
+      .service-card {
+        background: var(--premium-service-card) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: var(--radius-xl) !important;
+        padding: 2.5rem !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        position: relative !important;
+        overflow: hidden !important;
+        backdrop-filter: blur(8px) !important;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary),
+          var(--secondary),
+          var(--accent)
+        );
+        transform: scaleX(0);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .service-card::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        opacity: 0;
+      }
+
+      .service-card:hover {
+        transform: translateY(-12px) !important;
+        box-shadow: var(--shadow-2xl) !important;
+        border-color: rgba(var(--primary), 0.4) !important;
+      }
+
+      .service-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .service-card:hover::after {
+        width: 200px;
+        height: 200px;
+        opacity: 0.02;
+      }
+
+      .service-icon {
+        width: 72px !important;
+        height: 72px !important;
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary)
+        ) !important;
+        border-radius: var(--radius-lg) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 2rem !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        box-shadow: var(--shadow-md) !important;
+      }
+
+      .service-card:hover .service-icon {
+        transform: scale(1.15) rotate(8deg) !important;
+        box-shadow: var(--shadow-xl) !important;
+      }
+
+      .service-title {
+        color: var(--foreground) !important;
+        margin-bottom: 1.25rem !important;
+        font-weight: 600 !important;
+      }
+
+      .service-description {
+        color: var(--muted-foreground) !important;
+        line-height: 1.7 !important;
+        font-size: 1.05rem !important;
+      }
+
+      /* Enhanced Why Choose Us */
+      .why-choose-us {
+        background: linear-gradient(
+          135deg,
+          var(--card) 0%,
+          var(--background) 100%
+        ) !important;
+      }
+
+      .feature-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .feature-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 1.5rem !important;
+        margin-bottom: 2rem !important;
+        padding: 1.5rem !important;
+        border-radius: var(--radius-lg) !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        background: rgba(var(--foreground), 0.02) !important;
+        border: 1px solid transparent !important;
+      }
+
+      .feature-item:hover {
+        background: rgba(var(--primary), 0.08) !important;
+        border-color: rgba(var(--primary), 0.2) !important;
+        transform: translateX(12px) translateY(-2px) !important;
+        box-shadow: var(--shadow-lg) !important;
+      }
+
+      .feature-icon {
+        width: 28px !important;
+        height: 28px !important;
+        color: var(--secondary) !important;
+        flex-shrink: 0 !important;
+        margin-top: 0.25rem !important;
+      }
+
+      .feature-item:hover .feature-icon {
+        color: var(--accent) !important;
+        transform: scale(1.2) !important;
+      }
+
+      /* Premium Contact Section */
+      .contact-section {
+        background: radial-gradient(
+          ellipse at center,
+          var(--card) 0%,
+          var(--background) 70%
+        ) !important;
+        border-top: 1px solid var(--border) !important;
+      }
+
+      .contact-card {
+        background: linear-gradient(
+          145deg,
+          var(--card),
+          var(--background)
+        ) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: var(--radius-xl) !important;
+        padding: 3rem !important;
+        text-align: center !important;
+        box-shadow: var(--shadow-xl) !important;
+        backdrop-filter: blur(12px) !important;
+      }
+
+      /* Enhanced Footer */
+      .footer {
+        background: var(--background) !important;
+        border-top: 1px solid var(--border) !important;
+        color: var(--muted-foreground) !important;
+      }
+
+      /* Enhanced Animations */
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes logoLoad {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes iconFloat {
+        from {
+          transform: rotate(-15deg) scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: rotate(0deg) scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(40px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          transform: translateX(60px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes heroContentSlide {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes heroOrb {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero {
+          min-height: 85vh !important;
+          text-align: center !important;
+        }
+
+        .hero-buttons {
+          justify-content: center !important;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        .logo-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 1.5rem !important;
+        }
+
+        .trust-badges {
+          text-align: center !important;
+        }
+
+        .service-card {
+          padding: 2rem !important;
+        }
+      }
+
+      /* Accessibility & Performance */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* Focus states for accessibility */
+      .btn-primary:focus,
+      .btn-secondary:focus,
+      .nav-link:focus {
+        outline: 3px solid var(--accent) !important;
+        outline-offset: 2px !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <a href="#" class="logo">
+            <div class="logo-icon">
+              <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+            </div>
+            TripleeTech
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a href="#services" class="nav-link">Solutions</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#portfolio" class="nav-link">Success Stories</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="hidden md:block">
+            <a href="#contact" class="btn-primary">
+              Schedule Consultation
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              type="button"
+              class="text-gray-400 hover:text-white"
+              data-collapse-toggle="mobile-menu">
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="md:hidden hidden" id="mobile-menu">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#services" class="nav-link block">Solutions</a>
+            <a href="#about" class="nav-link block">About</a>
+            <a href="#portfolio" class="nav-link block">Success Stories</a>
+            <a href="#contact" class="nav-link block">Contact</a>
+            <div class="pt-4">
+              <a href="#contact" class="btn-primary w-full justify-center">
+                Schedule Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              Transform Your Business with
+              <span class="gradient-text">Next-Generation</span>
+              IT Solutions
+            </h1>
+
+            <p class="hero-subtitle">
+              Empower your enterprise with cutting-edge cybersecurity, cloud
+              infrastructure, and IT solutions designed for the future. Join
+              500+ companies that trust us with their digital transformation.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#contact" class="btn-primary">
+                Get Started Today
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </a>
+              <a href="#services" class="btn-secondary">
+                Explore Solutions
+                <i data-lucide="play" class="w-5 h-5"></i>
+              </a>
+            </div>
+
+            <div class="trust-badges">
+              <span class="trust-badge">
+                <i
+                  data-lucide="shield-check"
+                  class="w-5 h-5 text-green-400"></i>
+                SOC 2 Type II Certified
+              </span>
+              <span class="trust-badge">
+                <i data-lucide="award" class="w-5 h-5 text-blue-400"></i>
+                Microsoft Gold Partner
+              </span>
+              <span class="trust-badge">
+                <i data-lucide="users" class="w-5 h-5 text-purple-400"></i>
+                500+ Enterprise Clients
+              </span>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img
+              src="../../public/images/banner-large.jpg"
+              alt="Advanced IT Infrastructure Dashboard"
+              class="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Logos -->
+    <section class="client-logos py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-xl font-semibold text-gray-400 uppercase tracking-wider">
+            Trusted by Industry Leaders Worldwide
+          </h2>
+        </div>
+        <div class="logo-grid">
+          <div class="logo-wrapper">
+            <img src="../../public/images/hp.png" alt="HP Enterprise Partner" />
+          </div>
+          <div class="logo-wrapper">
+            <img
+              src="../../public/images/lenovo.png"
+              alt="Lenovo Solutions Partner" />
+          </div>
+          <div class="logo-wrapper">
+            <img
+              src="../../public/images/microsoft-silver.png"
+              alt="Microsoft Silver Partner" />
+          </div>
+          <div class="logo-wrapper">
+            <img
+              src="../../public/images/fortinet-silver.png"
+              alt="Fortinet Silver Partner" />
+          </div>
+          <div class="logo-wrapper">
+            <img
+              src="../../public/images/touchbistro.png"
+              alt="TouchBistro Client" />
+          </div>
+          <div class="logo-wrapper">
+            <img src="../../public/images/cloudli.png" alt="Cloudli Partner" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="mb-6">Elite IT Solutions Portfolio</h2>
+          <p class="text-xl text-gray-400 max-w-4xl mx-auto">
+            Comprehensive technology services engineered for enterprise
+            excellence. From zero-trust security to hybrid cloud architectures,
+            we deliver solutions that scale.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="shield-check" class="w-9 h-9 text-white"></i>
+            </div>
+            <h3 class="service-title">Advanced Cybersecurity</h3>
+            <p class="service-description">
+              Zero-trust architecture, AI-powered threat detection, and
+              comprehensive security operations center (SOC) services protecting
+              against sophisticated cyber threats.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="cloud-lightning" class="w-9 h-9 text-white"></i>
+            </div>
+            <h3 class="service-title">Hybrid Cloud Solutions</h3>
+            <p class="service-description">
+              Multi-cloud strategies, serverless architectures, and cloud-native
+              development with seamless integration across AWS, Azure, and
+              Google Cloud platforms.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="cpu" class="w-9 h-9 text-white"></i>
+            </div>
+            <h3 class="service-title">Infrastructure Automation</h3>
+            <p class="service-description">
+              DevOps implementation, infrastructure as code, and automated
+              monitoring solutions that reduce operational overhead by up to
+              60%.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="network" class="w-9 h-9 text-white"></i>
+            </div>
+            <h3 class="service-title">Enterprise Networking</h3>
+            <p class="service-description">
+              Software-defined networking (SDN), edge computing solutions, and
+              high-performance network architectures for global enterprise
+              connectivity.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="brain" class="w-9 h-9 text-white"></i>
+            </div>
+            <h3 class="service-title">AI & Analytics</h3>
+            <p class="service-description">
+              Machine learning pipelines, predictive analytics, and business
+              intelligence platforms that transform data into strategic
+              competitive advantages.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i data-lucide="headphones" class="w-9 h-9 text-white"></i>
+            </div>
+            <h3 class="service-title">Elite Support Services</h3>
+            <p class="service-description">
+              White-glove managed services with dedicated technical account
+              managers, proactive monitoring, and guaranteed SLA performance
+              metrics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="about" class="why-choose-us py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="mb-8">The TripleeTech Advantage</h2>
+            <p class="text-xl text-gray-400 mb-10">
+              Over 15 years of excellence in enterprise technology solutions. We
+              don't just implement technology—we architect your digital future.
+            </p>
+
+            <ul class="feature-list">
+              <li class="feature-item">
+                <i data-lucide="graduation-cap" class="feature-icon"></i>
+                <div>
+                  <h4 class="font-semibold text-white mb-3 text-lg">
+                    Elite Engineering Team
+                  </h4>
+                  <p class="text-gray-400">
+                    Master's-level engineers and architects with 200+ industry
+                    certifications and proven track records at Fortune 500
+                    companies.
+                  </p>
+                </div>
+              </li>
+
+              <li class="feature-item">
+                <i data-lucide="zap" class="feature-icon"></i>
+                <div>
+                  <h4 class="font-semibold text-white mb-3 text-lg">
+                    Lightning-Fast Deployment
+                  </h4>
+                  <p class="text-gray-400">
+                    Proprietary methodologies and automation frameworks enabling
+                    70% faster project delivery with zero downtime migrations.
+                  </p>
+                </div>
+              </li>
+
+              <li class="feature-item">
+                <i data-lucide="trophy" class="feature-icon"></i>
+                <div>
+                  <h4 class="font-semibold text-white mb-3 text-lg">
+                    Industry Recognition
+                  </h4>
+                  <p class="text-gray-400">
+                    Award-winning solutions with 99.97% client satisfaction,
+                    Gartner recognition, and partnerships with leading
+                    technology vendors.
+                  </p>
+                </div>
+              </li>
+
+              <li class="feature-item">
+                <i data-lucide="infinity" class="feature-icon"></i>
+                <div>
+                  <h4 class="font-semibold text-white mb-3 text-lg">
+                    Future-Proof Architecture
+                  </h4>
+                  <p class="text-gray-400">
+                    Modular, scalable designs built for emerging technologies
+                    including quantum computing, edge AI, and blockchain
+                    integration.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <img
+              src="../../public/images/team.jpg"
+              alt="TripleeTech Elite Engineering Team"
+              class="w-full h-auto rounded-2xl shadow-2xl" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-24">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="contact-card">
+          <h2 class="mb-8">Ready to Lead the Digital Revolution?</h2>
+          <p class="text-xl text-gray-400 mb-10">
+            Join the ranks of industry leaders who trust TripleeTech with their
+            most critical technology initiatives. Let's architect your
+            competitive advantage together.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
+            <a href="tel:+1-416-555-0123" class="btn-primary">
+              <i data-lucide="phone" class="w-5 h-5"></i>
+              Call (416) 555-0123
+            </a>
+            <a href="mailto:enterprise@tripleetech.com" class="btn-secondary">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+              enterprise@tripleetech.com
+            </a>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 text-sm text-gray-500">
+            <div class="text-center">
+              <div class="text-lg mb-2">🏢</div>
+              <p>Downtown Toronto Financial District</p>
+              <p>Bay Street Technology Center</p>
+            </div>
+            <div class="text-center">
+              <div class="text-lg mb-2">⚡</div>
+              <p>24/7 Enterprise Support</p>
+              <p>< 15 min Response Time</p>
+            </div>
+            <div class="text-center">
+              <div class="text-lg mb-2">🌍</div>
+              <p>Global Delivery Centers</p>
+              <p>North America • Europe • APAC</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-10">
+          <div>
+            <div class="logo mb-6">
+              <div class="logo-icon">
+                <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+              </div>
+              TripleeTech
+            </div>
+            <p class="text-gray-400 mb-4">
+              Elite enterprise technology solutions architecting the future of
+              business.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors">
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors">
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-white mb-6">Solutions</h4>
+            <ul class="space-y-3 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Cybersecurity</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Cloud Infrastructure</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >DevOps Automation</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >AI & Analytics</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-white mb-6">Company</h4>
+            <ul class="space-y-3 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >About Leadership</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Technology Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-white mb-6">Enterprise</h4>
+            <ul class="space-y-3 text-gray-400">
+              <li>📞 (416) 555-0123</li>
+              <li>✉️ enterprise@tripleetech.com</li>
+              <li>🏢 Toronto Financial District</li>
+              <li>⚡ 24/7 Premium Support</li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400">
+          <p>
+            &copy; 2025 TripleeTech Elite Solutions Inc. All rights reserved.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-white transition-colors"
+              >Terms of Service</a
+            >
+            <a href="#" class="hover:text-white transition-colors">Security</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Enhanced JavaScript -->
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Enhanced smooth scrolling with offset for sticky nav
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            const offsetTop = target.offsetTop - 80; // Account for navbar height
+            window.scrollTo({
+              top: offsetTop,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Advanced Intersection Observer for staggered animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const staggerObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0) scale(1)";
+            }, index * 100); // Stagger delay
+          }
+        });
+      }, observerOptions);
+
+      // Observe service cards with staggered animation
+      document.querySelectorAll(".service-card").forEach((el, index) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px) scale(0.95)";
+        el.style.transition = "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)";
+        staggerObserver.observe(el);
+      });
+
+      // Observe feature items
+      document.querySelectorAll(".feature-item").forEach((el, index) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateX(-20px)";
+        el.style.transition = `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${
+          index * 0.1
+        }s`;
+        staggerObserver.observe(el);
+      });
+
+      // Enhanced logo hover effects
+      document.querySelectorAll(".logo-wrapper").forEach((wrapper) => {
+        wrapper.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-8px) scale(1.05)";
+        });
+
+        wrapper.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0) scale(1)";
+        });
+      });
+
+      // Navbar scroll effect
+      let lastScrollY = window.scrollY;
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 100) {
+          navbar.style.background = "rgba(var(--background), 0.98)";
+          navbar.style.backdropFilter = "blur(20px) saturate(200%)";
+        } else {
+          navbar.style.background = "rgba(var(--card), 0.95)";
+          navbar.style.backdropFilter = "blur(16px) saturate(180%)";
+        }
+
+        lastScrollY = currentScrollY;
+      });
+
+      // Performance optimization: Reduce motion for users who prefer it
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+      if (prefersReducedMotion.matches) {
+        document.documentElement.style.setProperty(
+          "--animation-duration",
+          "0.01ms"
+        );
+      }
+
+      // Preload critical images
+      const criticalImages = [
+        "../../public/images/banner-large.jpg",
+        "../../public/images/team.jpg",
+      ];
+
+      criticalImages.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>High-fidelity Mockup – Fortinet screenshot concepts</title>
+    <!-- <link rel="stylesheet" href="../styles/tokens.css" /> -->
+    <style>
+      :root {
+        /* Color tokens */
+        --color-bg: #0f1221; /* deep navy */
+        --color-surface: #171a2f; /* elevated panel */
+        --color-primary: #00e0ff; /* cyan accent */
+        --color-primary-600: #00b7d4;
+        --color-secondary: #9effa2; /* lime accent */
+        --color-text: #e7ecf3; /* high contrast text */
+        --color-text-muted: #b6c0d1; /* secondary text */
+        --color-border: #2a2e45; /* subtle borders */
+        --color-focus: #ffbf47; /* WCAG-visible focus */
+
+        /* Typography */
+        --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+        --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+
+        --fs-300: 0.875rem; /* 14px */
+        --fs-400: 1rem; /* 16px base */
+        --fs-500: 1.125rem; /* 18px */
+        --fs-600: 1.25rem; /* 20px */
+        --fs-700: 1.5rem; /* 24px */
+        --fs-800: 2rem; /* 32px */
+
+        /* Spacing */
+        --sp-1: 0.25rem;
+        --sp-2: 0.5rem;
+        --sp-3: 0.75rem;
+        --sp-4: 1rem;
+        --sp-5: 1.5rem;
+        --sp-6: 2rem;
+        --sp-8: 3rem;
+        --radius: 0.75rem;
+        --radius-sm: 0.5rem;
+        --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.1);
+        --shadow-2: 0 4px 16px rgba(0, 0, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        font-size: var(--fs-400);
+        color: var(--color-text);
+        background: var(--color-bg);
+        line-height: 1.55;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--color-focus);
+        outline-offset: 2px;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin-inline: auto;
+        padding-inline: var(--sp-4);
+      }
+
+      .card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-1);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.625rem 0.9rem;
+        font-weight: 600;
+        color: #071318;
+        background: var(--color-primary);
+        border: 0;
+        border-radius: 0.6rem;
+        text-decoration: none;
+      }
+
+      .btn.secondary {
+        background: var(--color-secondary);
+      }
+
+      .badge {
+        border: 1px solid var(--color-border);
+        border-radius: 999px;
+        padding: 0.25rem 0.5rem;
+        color: var(--color-text-muted);
+      }
+    </style>
+    <style>
+      header,
+      main,
+      footer {
+        padding: var(--sp-5) var(--sp-4);
+      }
+      header {
+        position: sticky;
+        top: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(23, 26, 47, 0.95),
+          rgba(23, 26, 47, 0.75)
+        );
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--color-border);
+        z-index: 10;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--sp-3);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 800;
+        letter-spacing: 0.4px;
+      }
+      .brand .dot {
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        background: var(--color-primary);
+        box-shadow: 0 0 10px var(--color-primary);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: var(--sp-4);
+      }
+      .nav a {
+        color: var(--color-text-muted);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .hero {
+        padding-block: var(--sp-8);
+        display: grid;
+        gap: var(--sp-6);
+      }
+      .eyebrow {
+        color: var(--color-secondary);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem);
+        margin: 0;
+      }
+      .hero p {
+        color: var(--color-text-muted);
+        max-width: 60ch;
+      }
+      .actions {
+        display: flex;
+        gap: var(--sp-3);
+        flex-wrap: wrap;
+      }
+
+      .mock {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: linear-gradient(160deg, #09121a, #121b2f);
+        border: 1px solid var(--color-border);
+        box-shadow: var(--shadow-2);
+      }
+      .mock img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .badge-row {
+        display: flex;
+        gap: var(--sp-3);
+        flex-wrap: wrap;
+        margin-block: var(--sp-4);
+      }
+
+      .features {
+        display: grid;
+        gap: var(--sp-4);
+        grid-template-columns: 1fr;
+      }
+      .feat {
+        padding: var(--sp-4);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        background: linear-gradient(
+          160deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.01)
+        );
+      }
+      .feat h3 {
+        margin-top: 0;
+        font-size: var(--fs-600);
+      }
+      .feat p {
+        color: var(--color-text-muted);
+      }
+
+      /* Social proof logos */
+      .logos {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--sp-6);
+        align-items: center;
+        margin-block: var(--sp-10);
+        padding: 0;
+      }
+      .logos li {
+        list-style: none;
+      }
+      .logos img {
+        width: 100%;
+        max-height: 36px;
+        object-fit: contain;
+        filter: grayscale(1) contrast(1.2);
+        opacity: 0.9;
+      }
+
+      /* Team section spacing */
+      .team {
+        margin-block: var(--sp-10);
+      }
+
+      footer {
+        border-top: 1px solid var(--color-border);
+        color: var(--color-text-muted);
+      }
+
+      @media (width >= 900px) {
+        .hero {
+          grid-template-columns: 1.1fr 0.9fr;
+          align-items: center;
+        }
+        .features {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="sr-only" href="#main">Skip to main</a>
+    <header role="banner">
+      <div class="container topbar">
+        <div class="brand" aria-label="Brand">
+          <span class="dot" aria-hidden="true"></span>
+          <span>EdgeSecure</span>
+        </div>
+        <nav class="nav" aria-label="Primary">
+          <a href="#solutions">Solutions</a>
+          <a href="#products">Products</a>
+          <a href="#resources">Resources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="container" role="main">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">SASE • NGFW • SD‑WAN</div>
+          <h1>Unified security and networking for every edge</h1>
+          <p>
+            Protect users, apps, and data across your hybrid environment with a
+            single platform. Deploy fast, scale globally, and reduce operational
+            complexity.
+          </p>
+          <div class="actions">
+            <a class="btn" href="#cta">Start a free trial</a>
+            <a class="btn secondary" href="#learn">See how it works</a>
+          </div>
+          <div class="badge-row">
+            <span
+              class="badge"
+              role="img"
+              aria-label="Gartner Customers' Choice"
+              >Gartner Customers' Choice</span
+            >
+            <span class="badge" role="img" aria-label="SOC 2 Type II"
+              >SOC 2 Type II</span
+            >
+            <span class="badge" role="img" aria-label="ISO 27001"
+              >ISO 27001</span
+            >
+          </div>
+        </div>
+        <div class="mock card" aria-label="Hero visual">
+          <img
+            src="../../public/images/banner-large.jpg"
+            alt="Abstract technology banner" />
+        </div>
+      </section>
+
+      <section aria-labelledby="logos">
+        <h2 id="logos" class="sr-only">Trusted by</h2>
+        <ul class="logos" aria-label="Customer logos">
+          <li><img src="../../public/images/hp.png" alt="HP" /></li>
+          <li><img src="../../public/images/lenovo.png" alt="Lenovo" /></li>
+          <li>
+            <img
+              src="../../public/images/microsoft-silver.png"
+              alt="Microsoft Partner – Silver" />
+          </li>
+          <li>
+            <img
+              src="../../public/images/fortinet-silver.png"
+              alt="Fortinet Partner – Silver" />
+          </li>
+          <li>
+            <img src="../../public/images/touchbistro.png" alt="TouchBistro" />
+          </li>
+          <li><img src="../../public/images/cloudli.png" alt="Cloudli" /></li>
+        </ul>
+      </section>
+
+      <section class="features" aria-labelledby="features">
+        <h2 id="features" class="sr-only">Key capabilities</h2>
+        <article class="feat">
+          <h3>Converged platform</h3>
+          <p>
+            Networking and security delivered together. One policy model, one
+            console, fewer gaps.
+          </p>
+        </article>
+        <article class="feat">
+          <h3>Global performance</h3>
+          <p>
+            Low-latency backbone with local breakouts and smart routing to keep
+            apps snappy.
+          </p>
+        </article>
+        <article class="feat">
+          <h3>Zero Trust access</h3>
+          <p>
+            Strong identity, device posture, and continuous verification
+            built-in.
+          </p>
+        </article>
+      </section>
+
+      <section class="team" aria-labelledby="team">
+        <h2 id="team" class="sr-only">Our team</h2>
+        <div class="mock card" aria-label="Team photo">
+          <img src="../../public/images/team.jpg" alt="Team photo" />
+        </div>
+      </section>
+    </main>
+
+    <footer class="container" role="contentinfo">
+      <p>© EdgeSecure – Concept mockup for client review.</p>
+    </footer>
+  </body>
+</html>
