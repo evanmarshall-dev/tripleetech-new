@@ -104,7 +104,7 @@
           var(--fortinet-blue) 100%
         );
         background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-          url("../../public/images/pexels-mahdibafande-14990059.jpg") no-repeat
+          url("./public/images/pexels-mahdibafande-14990059.jpg") no-repeat
             center center/cover;
         display: flex;
         align-items: center;
@@ -464,8 +464,8 @@
           var(--fortinet-blue) 100%
         );
         background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-          url("../../public/images/pexels-uniqueton-4021262.jpg") no-repeat
-            center center/cover;
+          url("./public/images/pexels-uniqueton-4021262.jpg") no-repeat center
+            center/cover;
         display: flex;
         align-items: center;
         overflow: hidden;
@@ -539,19 +539,43 @@
       }
 
       .trust-card {
-        background: var(--fortinet-gray);
         background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-          url("../../public/images/pexels-steve-28574352.jpg") no-repeat center
+          url("./public/images/pexels-steve-28574352.jpg") no-repeat center
             center/cover;
         padding: 30px;
         border-radius: 10px;
         border-bottom: 5px solid var(--fortinet-green);
-        transition: transform 0.3s ease, background 1s ease;
+        position: relative;
+        transition: transform 0.3s ease;
+        overflow: hidden;
+      }
+
+      .trust-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--fortinet-green);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 1;
+      }
+
+      .trust-card:hover::before {
+        opacity: 0.9;
       }
 
       .trust-card:hover {
         transform: translateY(-5px);
-        background: var(--fortinet-green);
+      }
+
+      .trust-card h4,
+      .trust-card p,
+      .trust-card .news-link {
+        position: relative;
+        z-index: 2;
       }
 
       .trust-card h4 {
@@ -807,7 +831,7 @@
         <nav class="nav-container">
           <a href="/"
             ><img
-              src="../../public/icons/logo-small.svg"
+              src="./public/icons/logo-small.svg"
               alt="Triple E Technology Solutions Logo"
               class="logo"
           /></a>
@@ -1156,7 +1180,7 @@
           </div>
           <div>
             <img
-              src="../../public/images/pexels-pixabay-159304.jpg"
+              src="./public/images/pexels-pixabay-159304.jpg"
               alt="IHG Hotel"
               class="customer-image" />
           </div>
